@@ -97,6 +97,13 @@ app.get('/mult/:num1/:num2', (req, res) => {
     const product = parseInt(num1) * parseFloat(num2);
     res.json({ result: product });
 });
+
+app.get('/sumaTotal', (req, res) => {
+    const data = readData();
+    const totalSum = data.tacos.reduce((sum, taco) => sum + taco.precio_total, 0);
+    res.json({ result: totalSum });
+});
+
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
