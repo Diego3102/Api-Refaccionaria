@@ -100,7 +100,7 @@ app.get('/mult/:num1/:num2', (req, res) => {
 
 app.get('/sumaTotal', (req, res) => {
     const data = readData();
-    const totalSum = data.tacos.reduce((sum, taco) => sum + taco.precio_total, 0);
+    const totalSum = data.refacciones.reduce((sum, refacciones) => sum + taco.refacciones, 0);
     res.json({ result: totalSum });
 });
 
