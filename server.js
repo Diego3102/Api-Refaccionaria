@@ -91,6 +91,12 @@ app.delete('/refacciones/:id', (req, res) => {
     res.json({ message: "Spare part deleted successfully" });
 });
 
+
+app.get('/mult/:num1/:num2', (req, res) => {
+    const { num1, num2 } = req.params;
+    const product = parseInt(num1) * parseFloat(num2);
+    res.json({ result: product });
+});
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
